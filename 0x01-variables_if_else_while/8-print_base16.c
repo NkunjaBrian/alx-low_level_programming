@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main- Entry point
- * @void: Null value
+ * main - Entry point
+ * void: Null value
  *
  * Description: Print numbers of base 16
  * Return: Zero value
