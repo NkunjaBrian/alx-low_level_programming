@@ -1,23 +1,29 @@
- * main- Entry point
- * @void: Null value
- *
- * Description: Print numbers from 0 to 9 separated by comma and space
- * Return: Zero value
+#include <stdio.h>
+
+/**
+ * main - main block
+ * Description: Print all possible combinations of single-digit numbers.
+ * Numbers must be separated by commas and a space.
+ * You can only use `putchar` to print to the console.
+ * You can only use `putchar` up to four times.
+ * You are not allowed to use any variable of type `char`.
+ * Return: 0
  */
 
 int main(void)
 {
-	int n;
+    int x;
 
-	for (n = '0'; n <= '9'; n++)
-	{
-		putchar(n);
-		if (n != '9')
-		{
-			putchar(',');
-			putchar(' ');
-		}
-	}
-	putchar('\n');
-	return (0);
+    for (x = 48; x < 58; x++)
+    {
+        putchar(x);
+        if (x < 57)
+        {
+            putchar(44);
+            putchar(32);
+        }
+    }
+    putchar('\n');
+    return (0);
 }
+
