@@ -1,15 +1,14 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
-/*
- * *_strdup(char *str)- returns a pointer to a new string which is a duplicate of the string 
- * @str - string to be duplicated
- * Returns NULL if str = NULL
- *
+/**
+ * _strdup - duplicate to new memory space location
+ * @str: char
+ * Return: 0
  */
 char *_strdup(char *str)
 {
-	char *xxx;
+	char *aaa;
 	int i, r = 0;
 
 	if (str == NULL)
@@ -18,14 +17,13 @@ char *_strdup(char *str)
 	while (str[i] != '\0')
 		i++;
 
-	xxx = malloc(sizeof(char) * (i + 1));
+	aaa = malloc(sizeof(char) * (i + 1));
 
-	if (xxx == NULL)
+	if (aaa == NULL)
 		return (NULL);
 
 	for (r = 0; str[r]; r++)
-		xxx[r] = str[r];
+		aaa[r] = str[r];
 
-	return (xxx);
+	return (aaa);
 }
-
