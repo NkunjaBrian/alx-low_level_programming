@@ -2,11 +2,12 @@
 #include <stdlib.h>
 
 /**
- * argstostr - function that concatenates all the arguments of your program.
- * @ac: integer
- * @av: array of character pointers (strings)
+ * argstostr - Concatenates all the arguments of a program.
+ * @ac: Number of arguments.
+ * @av: Array of character pointers (strings).
  *
- * Returns: Pointer to a new string, or NULL if it fails
+ * Return: Pointer to a new string containing concatenated arguments,
+ *         or NULL if memory allocation fails.
  */
 char *argstostr(int ac, char **av)
 {
@@ -24,11 +25,11 @@ char *argstostr(int ac, char **av)
 
 	l += ac;
 
-	str = malloc(sizeof(char) * (l + 1)); 
+	str = malloc(sizeof(char) * (l + 1)); /* +1 for the null terminator */
 	if (str == NULL)
 		return (NULL);
 
-	r = 0; 
+	r = 0; /* Reset the r counter for string building */
 
 	for (i = 0; i < ac; i++)
 	{
@@ -37,11 +38,11 @@ char *argstostr(int ac, char **av)
 			str[r] = av[i][n];
 			r++;
 		}
-		str[r] = '\n'; 
+		str[r] = '\n'; /* Add newline character after each argument */
 		r++;
 	}
 
-	str[r] = '\0'; 
+	str[r] = '\0'; /* Add null terminator at the end of the concatenated string */
 
 	return (str);
 }
