@@ -6,7 +6,7 @@
  * @ac: integer
  * @av: array of character pointers (strings)
  *
- * Returns: Pointer to a new string
+ * Returns: Pointer to a new string, or NULL if it fails
  */
 char *argstostr(int ac, char **av)
 {
@@ -14,7 +14,7 @@ char *argstostr(int ac, char **av)
 	char *str;
 
 	if (av == NULL || ac == 0)
-		return NULL;
+		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
@@ -26,7 +26,7 @@ char *argstostr(int ac, char **av)
 
 	str = malloc(sizeof(char) * (l + 1)); 
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 
 	r = 0; 
 
@@ -37,11 +37,12 @@ char *argstostr(int ac, char **av)
 			str[r] = av[i][n];
 			r++;
 		}
-		str[r] = '\n';
+		str[r] = '\n'; 
 		r++;
 	}
 
 	str[r] = '\0'; 
 
-	return str;
+	return (str);
 }
+
