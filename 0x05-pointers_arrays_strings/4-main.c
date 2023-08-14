@@ -1,15 +1,18 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * main - check the code
+ * main - storing the address of variable into a pointer
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    char *str;
+  int n;
+  int *p;
 
-    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-    print_rev(str);
-    return (0);
+  n = 98;
+  p = &n;
+  printf("Address of 'n': %p\n", &n);
+  printf("Value of 'p': %p\n", p);
+  return (0);
 }
